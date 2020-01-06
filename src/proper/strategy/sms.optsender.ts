@@ -2,11 +2,13 @@ import { IOTPGenerator } from "./otp-generator.base";
 
 export class SMSOtpSender extends IOTPGenerator{
 
-    send(otp: String, {number='',email=''}:{
+    send(otp: String, {number}:{
         number: String,
-        email: String,
+        email?: String,
     }): Promise<boolean> {
-        console.log(number,email,otp)
-        throw new Error("Method not implemented.");
+        console.log(number,otp)
+        return new Promise((resolve,reject)=>{
+            reject("Method not implemented")
+        })
     }
 }

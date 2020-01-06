@@ -4,18 +4,23 @@ import { IOTPGenerator } from "./otp-generator.base";
 
 export class EmailOtpSender extends IOTPGenerator{
 
-    send(otp: String, {number='',email}: {
-        number: String,
+    getTransporter(){
+        return createTransport({
+            service:'gmail',
+            auth:{
+                user:'email@gmail.com',
+                pass:'*****'
+            }
+        });
+    }
+
+    send(otp: String, {email}: {
+        number?: String,
         email: String,
-    }): Promise<boolean> {
-        return new Promise<boolean>((resolve,reject)=>{
-            let transporter = createTransport({
-                service:'gmail',
-                auth:{
-                    user:'h.m.pranavkumarwewe@gmail.com',
-                    pass:'peenaPHOENIX@'
-                }
-            });
+    }): Promise<any> {
+        return new Promise<any>((resolve,reject)=>{
+
+            let transporter = this.getTransporter();
     
             let mailOptions = {
                 from:'h.m.pranavkumar@gmail.com',
@@ -26,7 +31,10 @@ export class EmailOtpSender extends IOTPGenerator{
     
             transporter.sendMail(mailOptions,(error, info)=>{
                 if(error) reject(error);
-                else resolve(info);
+                else resolve({
+                    status:'sent',
+                    info
+                });
             })
         });
         

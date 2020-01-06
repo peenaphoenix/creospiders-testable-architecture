@@ -1,4 +1,4 @@
-import { createCipher, randomBytes } from "crypto";
+import { createCipher, randomBytes, createDecipher } from "crypto";
 export class SecurityManager{
 
     key: any;
@@ -16,13 +16,17 @@ export class SecurityManager{
     }
 
     encrypt(intext: String){
-        let cipher = createCipher(this.algoritm,this.key);
+        let cipher = createCipher(this.algoritm,Buffer.from(this.key));
         let encryptedOtp = cipher.update(''+intext);
         encryptedOtp = Buffer.concat([encryptedOtp, cipher.final()]);
         return encryptedOtp.toString('hex');
     }
 
-    decrypt(){
+    decrypt(intext: string){
         // Yet to implement this method 
+        let cipher = createDecipher(this.algoritm,Buffer.from(this.key));
+        let decryptedText = cipher.update(Buffer.from(intext,'hex'));
+        decryptedText = Buffer.concat([decryptedText,cipher.final()]);
+        return decryptedText.toString();
     }
 }
