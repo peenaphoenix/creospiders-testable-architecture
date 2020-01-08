@@ -13,7 +13,7 @@ otpManager.sendOtp({
 
 // Improper method invocation
 let otpGenerator = new OTPGenerator();
-otpGenerator.send(true)
+otpGenerator.sendOtp(true)
 
 
 
