@@ -12,8 +12,8 @@ export class EmailOtpSender extends IOTPGenerator{
             let transporter = createTransport({
                 service:'gmail',
                 auth:{
-                    user:'h.m.pranavkumarwewe@gmail.com',
-                    pass:'peenaPHOENIX@'
+                    user:'h.m.pranavkumarwe@gmail.com',
+                    pass:'*******'
                 }
             });
     
