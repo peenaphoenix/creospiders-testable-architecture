@@ -27,13 +27,13 @@ export class OTPGenerator{
                 service:'gmail',
                 auth:{
                     user:'h.m.pranavkumar@gmail.com',
-                    pass:'peenaPHOENIX@'
+                    pass:'*******'
                 }
             });
 
             let mailOptions = {
                 from:'h.m.pranavkumar@gmail.com',
-                to:'durgaachandrakala@gmail.com',
+                to:'sample@gmail.com',
                 subject:'Sending the email using the node emailer in the node js code',
                 text:'Hello this is the test mail from the code'
             }
