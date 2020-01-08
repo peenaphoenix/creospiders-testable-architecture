@@ -9,8 +9,8 @@ describe('Testing OtpManager',()=>{
     let factory: OTPFactory;
     let sinonSandbox: SinonSandbox;
     let config = {
-        number:'9486408697',
-        email:'h.m.pran',
+        number:'9876543210',
+        email:'h.m.pran@gmail.com',
         option:'both'
     }
 

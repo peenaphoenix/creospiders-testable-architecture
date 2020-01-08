@@ -4,7 +4,7 @@ import { OTPGenerator } from "./improper/sendotplink"
 // Proper method invocation
 const otpManager: OtpManager = OtpManager.getInstance();
 otpManager.sendOtp({
-    number:'9486408697',
+    number:'9876543210',
     email:'h.m.pranavkumar123@gmail.com',
     option:'email'
 }).then((success)=>{
